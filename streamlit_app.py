@@ -4,6 +4,7 @@ import openai
 import streamlit as st
 import requests as res
 from pathlib import Path
+from sreamlit_lottie import st_lottie
 sa = ""
 st.title("Chatbot")
 def lottie_url(url):
@@ -11,7 +12,12 @@ def lottie_url(url):
     if r.status_code != 200:
         return None
     return r.json()
+lottie_ff= lottie_url("https://lottie.host/b0e7a727-7511-4b6e-9ab1-75695558e263/uezJK5yfZ0.json")
 with st.sidebar:
+    try:
+     st_lottie(lottie_ff, height=300, key="random")
+    except:
+        pass
     st.title(' AI CHATBOT/ COPY CHATBOT ')
     if 'OPENAI_API_KEY' in st.secrets:
         st.success('API key already provided!', icon='✅')
