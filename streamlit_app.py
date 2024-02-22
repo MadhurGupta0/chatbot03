@@ -4,7 +4,7 @@ import openai
 import streamlit as st
 import requests as res
 from pathlib import Path
-from sreamlit_lottie import st_lottie
+from streamlit_lottie import st_lottie
 sa = ""
 st.title("Chatbot")
 def lottie_url(url):
